@@ -2267,15 +2267,6 @@ void UIElement::HandlePostUpdate(StringHash eventType, VariantMap& eventData)
     UpdateAttributeAnimations(eventData[P_TIMESTEP].GetFloat());
 }
 
-// ATOMIC BEGIN
-void UIElement::SetBlockEventsRecursive(bool block)
-{
-    Object::SetBlockEvents(block);
-    for (Vector<SharedPtr<UIElement> >::Iterator it = children_.Begin(); it != children_.End(); ++it)
-        (*it)->SetBlockEventsRecursive(block);
-}
-// ATOMIC END
-
 }
 
 }

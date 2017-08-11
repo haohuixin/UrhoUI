@@ -638,9 +638,6 @@ public:
     /// Return effective minimum size, also considering layout. Used internally.
     IntVector2 GetEffectiveMinSize() const;
 
-    // ATOMIC BEGIN
-    void SetBlockEventsRecursive(bool block);
-    // ATOMIC END
 protected:
     /// Handle attribute animation added.
     virtual void OnAttributeAnimationAdded();
