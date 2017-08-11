@@ -807,7 +807,6 @@ void UI::Initialize()
     SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(UI, HandleBeginFrame));
     SubscribeToEvent(E_POSTUPDATE, ATOMIC_HANDLER(UI, HandlePostUpdate));
     SubscribeToEvent(E_RENDERUPDATE, ATOMIC_HANDLER(UI, HandleRenderUpdate));
-    SubscribeToEvent(E_ENDRENDERING, ATOMIC_HANDLER(UI, HandleRendering));
 
     ATOMIC_LOGINFO("Initialized user interface");
 }
@@ -1800,11 +1799,6 @@ void UI::HandlePostUpdate(StringHash eventType, VariantMap& eventData)
 void UI::HandleRenderUpdate(StringHash eventType, VariantMap& eventData)
 {
     RenderUpdate();
-}
-
-void UI::HandleRendering(StringHash eventType, VariantMap& eventData)
-{
-    Render(true);
 }
 
 void UI::HandleDropFile(StringHash eventType, VariantMap& eventData)
