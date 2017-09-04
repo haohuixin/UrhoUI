@@ -638,6 +638,10 @@ public:
     /// Return effective minimum size, also considering layout. Used internally.
     IntVector2 GetEffectiveMinSize() const;
 
+
+    /// Return XMLElement describing current style.
+    XMLElement GetStyleElement() const { return styleElement_; }
+
 protected:
     /// Handle attribute animation added.
     virtual void OnAttributeAnimationAdded();
@@ -803,6 +807,9 @@ private:
     static XPathQuery styleXPathQuery_;
     /// Tag list.
     StringVector tags_;
+
+    /// XML element with attribute values of currently set style.
+    XMLElement styleElement_;
 };
 
 template <class T> T* UIElement::CreateChild(const String& name, unsigned index)

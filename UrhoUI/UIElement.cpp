@@ -302,6 +302,7 @@ bool UIElement::LoadXML(const XMLElement& source, XMLFile* styleFile, bool setIn
 
     EnableLayoutUpdate();
     UpdateLayout();
+    styleElement_ = source;
 
     return true;
 }
